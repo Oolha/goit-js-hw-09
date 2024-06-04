@@ -72,7 +72,7 @@ const images = [
 const imagesList = document.querySelector(".gallery");
 function imageTemplate(imgObj) { 
     return `<li class="gallery-item">
-  <a class="gallery-link" href=${imgObj.original} onclick="event.preventDefault()">
+  <a class="gallery-link" href="${imgObj.original}">
     <img
       class="gallery-image"
       src=${imgObj.preview}
@@ -94,7 +94,7 @@ const lightbox = new SimpleLightbox('ul.gallery a', {
   captions: true,
   captionsData: 'alt',
   captionPosition: 'bottom',
-  captionPosition: 250
+  captionDelay: 250
 
 });
  

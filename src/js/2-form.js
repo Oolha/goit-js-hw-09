@@ -23,8 +23,8 @@ const form = document.querySelector('.feedback-form');
 
 form.addEventListener('input', () => {
   const formData = {
-    email: form.elements.email.value,
-    message: form.elements.message.value,
+    email: form.elements.email.value.trim(),
+    message: form.elements.message.value.trim(),
     };
     saveToLS('feedback-form-state', formData);
 
@@ -43,8 +43,8 @@ window.addEventListener('DOMContentLoaded', () => {
 form.addEventListener('submit', e => {
     e.preventDefault();
    const formData = {
-        email: form.elements.email.value,
-        message: form.elements.message.value,
+        email: form.elements.email.value.trim(),
+        message: form.elements.message.value.trim(),
     };
 
     if (formData.email === '' || formData.message === '') {
@@ -54,8 +54,6 @@ form.addEventListener('submit', e => {
 
     console.log(formData);
     form.reset();
-    localStorage.removeItem('email');
-    localStorage.removeItem('message');
     localStorage.removeItem('feedback-form-state');
 
 })
